@@ -1,0 +1,7 @@
+extends layout
+
+block content
+	p ID: #{user.id}
+	p Name: #{user.name.givenName} #{user.name.middleName} #{user.name.familyName}
+	if user.emails
+		p Email: #{user.emails[0].value}

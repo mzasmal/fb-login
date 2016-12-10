@@ -1,0 +1,40 @@
+doctype html
+html
+  head
+    title Diggs Me Up
+
+    meta( charset='utf-8')
+    meta( http-equiv='X-UA-Compatible' content='IE=edge' )
+    meta( name="viewport" content="width=device-width, initial-scale=1" )
+
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,900" rel="stylesheet")
+    link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+  body
+    nav.navbar.navbar-default
+      .container
+        .navbar-header
+          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#myNavbar' aria-expanded='false', aria-controls='navbar')
+            span.sr-only Toggle Navigation
+            span.icon-bar       
+            span.icon-bar
+            span.icon-bar       
+          a.navbar-brand(href='/') Diggs Me Up
+        #myNavbar.collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar-right
+            if user
+              li
+                a(href='/login/logout') Logout
+            else
+              li
+                a(href='/login/facebook') Sign Up
+              li
+                a(href='/login/facebook') Log In
+
+    .container
+      block content
+    
+  script( src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js' )
+  script( src='javascripts/bootstrap.js' )
